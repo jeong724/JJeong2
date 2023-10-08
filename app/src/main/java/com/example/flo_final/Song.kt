@@ -1,3 +1,8 @@
 package com.example.flo_final
 
-data class Song()
+import android.icu.text.CaseMap.Title
+
+data class Song(
+    val title : String = "",
+    val singer : String = ""
+)
