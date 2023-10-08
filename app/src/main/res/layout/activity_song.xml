@@ -69,10 +69,20 @@
         android:id="@+id/song_singer.txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="가수"
+        android:text=" 가수"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/song_name.txt"
         app:layout_constraintTop_toBottomOf="@+id/song_name.txt"/>
+
+    <ImageView
+        android:id="@+id/btn_arrow_more.ib"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/btn_arrow_more"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/song_singer.txt"
+        app:layout_constraintTop_toBottomOf="@id/song_singer.txt"
+        android:layout_marginTop="-20dp"/>
 
     <ImageButton
         android:id="@+id/album_img.ib"
@@ -85,6 +95,27 @@
         android:layout_marginStart="-70dp"
         app:layout_constraintBottom_toTopOf="@+id/song_name.txt"
         app:layout_constraintLeft_toLeftOf="@+id/song_name.txt"/>
+
+    <TextView
+        android:id="@+id/song_lyrics"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="나라는 꽃가루에"
+        android:layout_marginTop="390dp"
+        app:layout_constraintBottom_toTopOf="@id/song_name.txt"
+        android:layout_marginStart="160dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="눈이 따끔해 아야"
+        android:layout_marginTop="410dp"
+        app:layout_constraintBottom_toTopOf="@id/song_name.txt"
+        android:layout_marginStart="160dp"/>
+
+
+
+
 
     <LinearLayout
         android:id="@+id/song_like_iv_layout"
@@ -187,6 +218,47 @@
             android:src="@drawable/btn_miniplayer_next" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/repeat_song.iv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/nugu_btn_repeat_inactive"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toStartOf="@id/song_player_layout"
+        app:layout_constraintTop_toBottomOf="@id/song_progressbar_view"/>
+
+    <ImageView
+        android:id="@+id/random_song.iv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/nugu_btn_random_inactive"
+        android:layout_marginEnd="-270dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toStartOf="@id/song_player_layout"
+        app:layout_constraintTop_toBottomOf="@id/song_progressbar_view"/>
+
+    <ImageView
+        android:id="@+id/instagram.iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/btn_actionbar_instagram"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="130dp"
+        app:layout_constraintEnd_toStartOf="@id/song_player_layout"
+        app:layout_constraintTop_toBottomOf="@id/song_progressbar_view"/>
+
+    <ImageView
+        android:id="@+id/player_go_list.iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/btn_miniplayer_go_list"
+        android:layout_marginEnd="-270dp"
+        android:layout_marginTop="130dp"
+        app:layout_constraintEnd_toStartOf="@id/song_player_layout"
+        app:layout_constraintTop_toBottomOf="@id/song_progressbar_view"/>
+
 
     <ImageView
         android:id="@+id/song_related_iv"
