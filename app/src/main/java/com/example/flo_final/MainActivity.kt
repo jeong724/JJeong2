@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, SongActivity::class.java))
         }
         initBottomNavigation()
-
     }
 
     private fun initBottomNavigation(){
