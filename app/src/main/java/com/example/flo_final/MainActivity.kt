@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.flo.HomeFragment
 import com.example.flo_final.databinding.ActivityMainBinding
+import android.widget.TextView
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.mainPlayerCl.setOnClickListener{
+            startActivity(Intent(this, SongActivity::class.java))
+        }
         initBottomNavigation()
 
     }
