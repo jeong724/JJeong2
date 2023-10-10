@@ -24,21 +24,11 @@ class AlbumFragment : Fragment() {
             (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_frm,HomeFragment()).commitAllowingStateLoss()
         }
         
-        binding.linearlayout7.setOnClickListener{
-            Toast.makeText(activity, "LILAC", Toast.LENGTH_SHORT).show()
-        }
-        
-        binding.linearlayout8.setOnClickListener {
-            Toast.makeText(activity, "Flu", Toast.LENGTH_SHORT).show()
-        }
-        
-        binding.linearlayout9.setOnClickListener {
-            Toast.makeText(activity, "Coin", Toast.LENGTH_SHORT).show()
-        }
-        
-        binding.linearlayout10.setOnClickListener {
-            Toast.makeText(activity, "봄 안녕", Toast.LENGTH_SHORT).show()
-        }
+
+
+        val albumVPAdapter = AlbumVPAdapter(this)
+        binding.albumContentVp.adapter=albumVPAdapter
+
         return binding.root
     }
 }
