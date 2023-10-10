@@ -317,15 +317,24 @@
             app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
             app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
 
-        <ImageView
+
+            //android:id="@+id/home_pannel_viewpager_img"
+            //android:layout_width="wrap_content"
+            //android:layout_height="100dp"
+            //android:layout_marginTop="10dp"
+            //android:scaleType="fitXY"
+            //android:src="@drawable/img_home_viewpager_exp"
+            //app:layout_constraintStart_toStartOf="parent"
+            //app:layout_constraintTop_toBottomOf="@+id/home_pannel_album_today_singer1" />
+
+        <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/home_pannel_viewpager_img"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="10dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/img_home_viewpager_exp"
+            android:layout_marginTop="15dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_pannel_album_today_singer1" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_pannel_album_today_singer1"/>
 
         <TextView
             android:id="@+id/home_pannel_potcast_txt"
