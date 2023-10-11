@@ -46,6 +46,28 @@ class SongFragment : Fragment() {
             Toast.makeText(activity, "Coin", Toast.LENGTH_SHORT).show()
         }
 
+        fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            val binding = FragmentSongBinding.inflate(inflater, container, false)
+
+            val myImageView = binding.songMixonTg
+            val myImageView2 = binding.btnToggleOnTg
+
+            myImageView.setOnClickListener {
+                // 이미지뷰1을 숨김
+                myImageView.visibility = View.INVISIBLE
+
+                // 이미지뷰2를 보이게 함
+                myImageView2.visibility = View.VISIBLE
+            }
+
+            return binding.root
+        }
+
+
 
         return binding.root
     }

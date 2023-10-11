@@ -112,6 +112,10 @@
             android:id="@+id/album_content_tb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabIndicatorFullWidth="false"
+            app:tabSelectedTextColor="#3f3fff"
+            app:tabIndicatorColor="#3f3fff"
+            app:tabRippleColor="#00ff0000"
             app:layout_constraintEnd_toEndOf="@id/album_album_iv"
             app:layout_constraintStart_toStartOf="@id/album_album_iv"
             app:layout_constraintTop_toBottomOf="@id/album_album_iv" />
