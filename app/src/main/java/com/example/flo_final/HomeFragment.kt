@@ -14,6 +14,7 @@ import com.example.flo_final.PanelFragment
 import com.example.flo_final.PanelVPAdapter
 import com.example.flo_final.R
 import com.example.flo_final.databinding.FragmentHomeBinding
+import me.relex.circleindicator.CircleIndicator3
 
 class HomeFragment : Fragment() {
 
@@ -30,8 +31,11 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        binding.homePannelIndicator.setViewPager(binding.homePannelBackgroundIv)
+
         binding.homePannelAlbumTodayImg1.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_frm,AlbumFragment()).commitAllowingStateLoss()
+
         }
 
         val bannerAdapter = BannerVPAdapter(this)
@@ -60,4 +64,5 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
+
 }
