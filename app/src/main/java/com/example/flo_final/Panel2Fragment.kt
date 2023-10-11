@@ -5,20 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.flo_final.databinding.FragmentDetailBinding
-import com.example.flo_final.databinding.FragmentPanelBinding
-import com.example.flo_final.databinding.FragmentVideoBinding
+import com.example.flo_final.databinding.FragmentPanel2Binding
 
-class PanelFragment : Fragment() {
+class Panel2Fragment : Fragment() {
 
-    lateinit var binding: FragmentPanelBinding
+    lateinit var binding: FragmentPanel2Binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= FragmentPanelBinding.inflate(inflater, container, false)
+        binding= FragmentPanel2Binding.inflate(inflater, container, false)
         return binding.root
     }
 }

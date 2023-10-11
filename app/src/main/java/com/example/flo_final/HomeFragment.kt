@@ -9,12 +9,10 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.flo_final.AlbumFragment
 import com.example.flo_final.BannerFragment
 import com.example.flo_final.BannerVPAdapter
+import com.example.flo_final.HomeVPAdapter
 import com.example.flo_final.MainActivity
-import com.example.flo_final.PanelFragment
-import com.example.flo_final.PanelVPAdapter
 import com.example.flo_final.R
 import com.example.flo_final.databinding.FragmentHomeBinding
-import me.relex.circleindicator.CircleIndicator3
 
 class HomeFragment : Fragment() {
 
@@ -33,6 +31,9 @@ class HomeFragment : Fragment() {
 
         binding.homePannelIndicator.setViewPager(binding.homePannelBackgroundIv)
 
+        val homeAdapter=HomeVPAdapter(this)
+        binding.homePannelBackgroundIv.adapter=homeAdapter
+
         binding.homePannelAlbumTodayImg1.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_frm,AlbumFragment()).commitAllowingStateLoss()
 
@@ -48,19 +49,6 @@ class HomeFragment : Fragment() {
 
         binding.homePannelViewpagerImg.adapter=bannerAdapter
         binding.homePannelViewpagerImg.orientation=ViewPager2.ORIENTATION_HORIZONTAL
-
-        val panelAdapter=PanelVPAdapter(this)
-        panelAdapter.addFragment(PanelFragment(R.drawable.img_first_album_default))
-        panelAdapter.addFragment(PanelFragment(R.drawable.img_album_exp4))
-        panelAdapter.addFragment(PanelFragment(R.drawable.img_first_album_default))
-        panelAdapter.addFragment(PanelFragment(R.drawable.img_album_exp4))
-        panelAdapter.addFragment(PanelFragment(R.drawable.img_first_album_default))
-        panelAdapter.addFragment(PanelFragment(R.drawable.img_album_exp4))
-
-
-
-        binding.homePannelBackgroundIv.adapter=panelAdapter
-        binding.homePannelBackgroundIv.orientation=ViewPager2.ORIENTATION_HORIZONTAL
 
         return binding.root
     }
