@@ -10,6 +10,8 @@ import com.example.flo_final.AlbumFragment
 import com.example.flo_final.BannerFragment
 import com.example.flo_final.BannerVPAdapter
 import com.example.flo_final.MainActivity
+import com.example.flo_final.PanelFragment
+import com.example.flo_final.PanelVPAdapter
 import com.example.flo_final.R
 import com.example.flo_final.databinding.FragmentHomeBinding
 
@@ -42,6 +44,19 @@ class HomeFragment : Fragment() {
 
         binding.homePannelViewpagerImg.adapter=bannerAdapter
         binding.homePannelViewpagerImg.orientation=ViewPager2.ORIENTATION_HORIZONTAL
+
+        val panelAdapter=PanelVPAdapter(this)
+        panelAdapter.addFragment(PanelFragment(R.drawable.img_first_album_default))
+        panelAdapter.addFragment(PanelFragment(R.drawable.img_album_exp4))
+        panelAdapter.addFragment(PanelFragment(R.drawable.img_first_album_default))
+        panelAdapter.addFragment(PanelFragment(R.drawable.img_album_exp4))
+        panelAdapter.addFragment(PanelFragment(R.drawable.img_first_album_default))
+        panelAdapter.addFragment(PanelFragment(R.drawable.img_album_exp4))
+
+
+
+        binding.homePannelBackgroundIv.adapter=panelAdapter
+        binding.homePannelBackgroundIv.orientation=ViewPager2.ORIENTATION_HORIZONTAL
 
         return binding.root
     }
