@@ -51,17 +51,16 @@ class SongFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
-            val binding = FragmentSongBinding.inflate(inflater, container, false)
 
-            val myImageView = binding.songMixonTg
-            val myImageView2 = binding.btnToggleOnTg
+            binding = FragmentSongBinding.inflate(inflater, container, false)
+            binding.songMixoffTg.setOnClickListener {
+                binding.songMixoffTg.visibility = View.GONE
+                binding.songMixonTg.visibility = View.VISIBLE
+            }
 
-            myImageView.setOnClickListener {
-                // 이미지뷰1을 숨김
-                myImageView.visibility = View.INVISIBLE
-
-                // 이미지뷰2를 보이게 함
-                myImageView2.visibility = View.VISIBLE
+            binding.songMixonTg.setOnClickListener {
+                binding.songMixoffTg.visibility = View.VISIBLE
+                binding.songMixonTg.visibility = View.GONE
             }
 
             return binding.root

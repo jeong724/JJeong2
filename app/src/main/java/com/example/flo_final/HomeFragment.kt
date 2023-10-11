@@ -29,7 +29,11 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+
         binding.homePannelIndicator.setViewPager(binding.homePannelBackgroundIv)
+        binding.homeBannerIndicator.setViewPager(binding.homePannelViewpagerImg)
+
+        //binding.homePannelBackgroundIv.adapter!!.registerAdapterDataObserver(binding.homePannelIndicator.adapterDataObserver)
 
         val homeAdapter=HomeVPAdapter(this)
         binding.homePannelBackgroundIv.adapter=homeAdapter

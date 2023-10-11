@@ -21,24 +21,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />-->
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/home_pannel_background_iv"
-            android:layout_width="match_parent"
-            android:layout_height="430dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
         <me.relex.circleindicator.CircleIndicator3
             android:id="@+id/home_pannel_indicator"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             app:ci_drawable_unselected="@drawable/gray_indicator"
-            app:ci_drawable="@drawable/black_indicator"
+            app:ci_drawable="@drawable/blue_indicator"
             app:ci_animator="@animator/scale_with_alpha"
             app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/home_pannel_background_iv"
+            android:layout_width="match_parent"
+            android:layout_height="430dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
 
         <TextView
@@ -228,6 +230,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_pannel_album_today_singer1"/>
+
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/home_banner_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            app:ci_drawable_unselected="@drawable/gray_indicator"
+            app:ci_drawable="@drawable/blue_indicator"
+            app:ci_animator="@animator/scale_with_alpha"
+            app:layout_constraintTop_toBottomOf="@id/home_pannel_viewpager_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
             android:id="@+id/home_pannel_potcast_txt"
