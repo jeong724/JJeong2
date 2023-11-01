@@ -126,7 +126,7 @@ class SongActivity : AppCompatActivity(){
         val sharedPreferences = getSharedPreferences("song", MODE_PRIVATE)
         val editor = sharedPreferences.edit() // 에디터
         val songJson = gson.toJson(song)
-        editor.putString("song", songJson)
+        editor.putString("songData", songJson)
 
         editor.apply()
 
