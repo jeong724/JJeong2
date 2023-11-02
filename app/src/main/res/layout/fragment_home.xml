@@ -88,131 +88,15 @@
             app:layout_constraintTop_toTopOf="@id/home_pannel_today_music_txt" />
 
 
-        <ImageView
-            android:id="@+id/home_pannel_album_today_img1"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/img_album_exp2"
-            app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
-
-        <ImageView
-            android:id="@+id/home_pannel_album_today_img2"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginStart="170dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/img_album_exp2"
-            app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
-
-        <ImageView
-            android:id="@+id/home_pannel_album_today_img3"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginStart="340dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/img_album_exp2"
-            app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
-
-        <ImageView
-            android:id="@+id/home_pannel_album_player1"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="150dp"
-            android:src="@drawable/widget_black_play"
-            app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
-
-        <ImageView
-            android:id="@+id/home_pannel_album_player2"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="270dp"
-            android:layout_marginTop="150dp"
-            android:src="@drawable/widget_black_play"
-            app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
-
-        <TextView
-            android:id="@+id/home_pannel_album_name1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:text="LILAC"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
-
-        <TextView
-            android:id="@+id/home_pannel_album_name2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="170dp"
-            android:layout_marginTop="200dp"
-            android:text="COIN"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
-
-        <TextView
-            android:id="@+id/home_pannel_album_name3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="340dp"
-            android:layout_marginTop="200dp"
-            android:text="CELEBRITY"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
-
-        <TextView
-            android:id="@+id/home_pannel_album_today_singer1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="225dp"
-            android:text="아이유(IU)"
-            android:textSize="13sp"
-            app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
-
-        <TextView
-            android:id="@+id/home_pannel_album_today_singer2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="170dp"
-            android:layout_marginTop="225dp"
-            android:text="아이유(IU)"
-            android:textSize="13sp"
-            app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
-
-        <TextView
-            android:id="@+id/home_pannel_album_today_singer3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="340dp"
-            android:layout_marginTop="225dp"
-            android:text="아이유(IU)"
-            android:textSize="13sp"
-            app:layout_constraintLeft_toLeftOf="@id/home_pannel_today_music_txt"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
-
-
-        //android:id="@+id/home_pannel_viewpager_img"
-        //android:layout_width="wrap_content"
-        //android:layout_height="100dp"
-        //android:layout_marginTop="10dp"
-        //android:scaleType="fitXY"
-        //android:src="@drawable/img_home_viewpager_exp"
-        //app:layout_constraintStart_toStartOf="parent"
-        //app:layout_constraintTop_toBottomOf="@+id/home_pannel_album_today_singer1" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_today_music_album_rv"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginTop="10dp"
+            tools:listitem="@layout/item_album"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/home_pannel_today_music_overall_btn" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/home_pannel_viewpager_img"
@@ -221,7 +105,7 @@
             android:layout_marginTop="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_pannel_album_today_singer1"/>
+            app:layout_constraintTop_toBottomOf="@+id/home_today_music_album_rv"/>
 
         <me.relex.circleindicator.CircleIndicator3
             android:id="@+id/home_banner_indicator"
