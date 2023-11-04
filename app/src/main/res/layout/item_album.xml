@@ -56,7 +56,7 @@
         android:textColor="#a8a8a8"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="@id/item_album_cover_img_cardview"
-        app:layout_constraintTop_toBottomOf="@id/item_album_title_tv"
+        app:layout_constraintTop_toBottomOf="@id/item_album_title_tv"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
