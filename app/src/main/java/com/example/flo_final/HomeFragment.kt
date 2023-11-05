@@ -16,6 +16,7 @@ import com.example.flo_final.HomeVPAdapter
 import com.example.flo_final.MainActivity
 import com.example.flo_final.R
 import com.example.flo_final.databinding.FragmentHomeBinding
+import com.google.gson.Gson
 import me.relex.circleindicator.CircleIndicator3
 
 class HomeFragment : Fragment() {
@@ -64,7 +65,23 @@ class HomeFragment : Fragment() {
         binding.homeTodayMusicAlbumRv.adapter=albumRVAdapter
         binding.homeTodayMusicAlbumRv.layoutManager=LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-        
+        albumRVAdapter.setMyClickListener(object : AlbumRVAdapter.MyItemClickListener{
+            override fun onItemClick(album: Album) {
+                (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_frm, AlbumFragment().apply {
+                    arguments = Bundle().apply {
+                        val gson = Gson()
+                        val albumJson = gson.toJson(album)
+                        putString("album", albumJson)
+                    }
+                }).commitAllowingStateLoss()
+            }
+
+            override fun onRemoveAlbum(position: Int) {
+                albumRVAdapter.removeItem(position)
+            }
+
+        })
+
         val bannerAdapter = BannerVPAdapter(this)
         bannerAdapter.addFragment(BannerFragment(R.drawable.img_home_viewpager_exp))
         bannerAdapter.addFragment(BannerFragment(R.drawable.img_home_viewpager_exp2))
@@ -78,5 +95,6 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
+
 
 }

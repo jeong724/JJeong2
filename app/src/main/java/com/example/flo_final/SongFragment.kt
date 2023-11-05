@@ -46,25 +46,6 @@ class SongFragment : Fragment() {
             Toast.makeText(activity, "Coin", Toast.LENGTH_SHORT).show()
         }
 
-        fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-
-            binding = FragmentSongBinding.inflate(inflater, container, false)
-            binding.songMixoffTg.setOnClickListener {
-                binding.songMixoffTg.visibility = View.GONE
-                binding.songMixonTg.visibility = View.VISIBLE
-            }
-
-            binding.songMixonTg.setOnClickListener {
-                binding.songMixoffTg.visibility = View.VISIBLE
-                binding.songMixonTg.visibility = View.GONE
-            }
-
-            return binding.root
-        }
 
 
 
