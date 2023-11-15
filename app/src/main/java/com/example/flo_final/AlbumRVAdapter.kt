@@ -21,7 +21,7 @@ class AlbumRVAdapter (private val albumList : ArrayList<Album>) : RecyclerView.A
         albumList.add(album)
         notifyDataSetChanged()
     }
-
+//
     fun removeItem(position: Int){
         albumList.removeAt(position)
         notifyDataSetChanged()
