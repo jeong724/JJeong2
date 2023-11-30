@@ -24,14 +24,14 @@ class LockerFragment : Fragment() {
     ): View? {
         binding=FragmentLockerBinding.inflate(inflater, container, false)
 
-        val lockerVPAdapter=LockerVPAdapter(this)
-        binding.lockerVp.adapter=lockerVPAdapter
+        val lockerAdapter=LockerVPAdapter(this)
+        binding.lockerVp.adapter=lockerAdapter
         TabLayoutMediator(binding.lockerTab,binding.lockerVp){
             tab, position -> tab.text=information[position]
         }.attach()
 
         return binding.root
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_locker, container, false)
+        //return inflater.inflate(R.layout.fragment_locker, container, false)
     }
 }

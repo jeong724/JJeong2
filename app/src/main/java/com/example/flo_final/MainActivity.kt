@@ -125,18 +125,6 @@ class MainActivity : AppCompatActivity() {
         songDB.SongDao().insert(
             Song(
                 "Lilac",
-                "IU",
-                0,
-                200,
-                false,
-                "music_lilac",
-                R.drawable.img_album_exp2,
-                false,
-            )
-        )
-        songDB.SongDao().insert(
-            Song(
-                "Lilac",
                 "아이유 (IU)",
                 0,
                 200,

@@ -1,5 +1,6 @@
 package com.example.flo_final
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
@@ -58,6 +59,18 @@ class SongActivity : AppCompatActivity(){
         binding.songPreviousIv.setOnClickListener {
             moveSong(-1)
         }
+
+        binding.songLikeIv.setOnClickListener {
+            setLike(songs[nowPos].isLike)
+        }
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("message", "뒤로가기 버튼 클릭")
+
+        setResult(RESULT_OK, intent)
+        finish()
     }
 
     private fun initSong(){
@@ -81,25 +94,37 @@ class SongActivity : AppCompatActivity(){
         setPlayer(songs[nowPos])
     }
 
+    private fun setLike(isLike: Boolean){
+        songs[nowPos].isLike = !isLike
+        songDB.SongDao().updateIsLikeById(!isLike,songs[nowPos].id)
+
+        if(!isLike){
+            binding.songLikeIv.setImageResource(R.drawable.ic_my_like_on)
+        }else{
+            binding.songLikeIv.setImageResource(R.drawable.ic_my_like_off)
+        }
+    }
+
     private fun moveSong(direct : Int){
         if (nowPos + direct < 0){
             Toast.makeText(this, "first song", Toast.LENGTH_SHORT).show()
-            return
         }
-        if (nowPos+direct >= songs.size){
+        else if (nowPos+direct >= songs.size){
             Toast.makeText(this, "last song", Toast.LENGTH_SHORT).show()
-            return
+        }
+        else {
+            nowPos += direct
+
+
+            timer.interrupt()
+            startTimer()
+
+            mediaPlayer?.release()
+            mediaPlayer = null
+
+            setPlayer(songs[nowPos])
         }
 
-        nowPos+=direct
-
-        timer.interrupt()
-        startTimer()
-
-        mediaPlayer?.release()
-        mediaPlayer=null
-
-        setPlayer(songs[nowPos])
     }
 
     private fun getPlayingSongPosition(songId : Int): Int{
@@ -121,6 +146,12 @@ class SongActivity : AppCompatActivity(){
 
         val music = resources.getIdentifier(song.music, "raw", this.packageName)
         mediaPlayer=MediaPlayer.create(this, music)
+
+        if (song.isLike){
+            binding.songLikeIv.setImageResource(R.drawable.ic_my_like_on)
+        } else{
+            binding.songLikeIv.setImageResource(R.drawable.ic_my_like_off)
+        }
 
         setPlayerStatus(song.isPlaying)
 

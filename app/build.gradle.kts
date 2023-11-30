@@ -35,6 +35,7 @@ android {
         jvmTarget = "1.8"
     }
 
+
     buildFeatures{
         dataBinding = true
     }
@@ -61,8 +62,9 @@ dependencies {
     implementation ("me.relex:circleindicator:2.1.6")
 
     //roomdb
-    implementation("androidx.room:room-ktx:2.6.0")
     implementation("androidx.room:room-runtime:2.6.0")
     implementation("androidx.room:room-migration:2.6.0")
     kapt("androidx.room:room-compiler:2.6.0")
+    annotationProcessor("androidx.room:room-compiler:2.6.0")
+    implementation("androidx.room:room-ktx:2.6.0")
 }
