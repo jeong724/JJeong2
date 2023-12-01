@@ -126,7 +126,7 @@ class SongActivity : AppCompatActivity(){
         }
 
     }
-//
+
     private fun getPlayingSongPosition(songId : Int): Int{
         for (i in 0 until songs.size){
             if (songs[i].id == songId){
