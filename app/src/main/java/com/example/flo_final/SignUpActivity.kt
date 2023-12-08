@@ -11,7 +11,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import javax.security.auth.callback.Callback
 
-class SignUpActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity(), SignUpView {
 
     lateinit var binding: ActivitySignupBinding
 
@@ -70,7 +70,7 @@ class SignUpActivity : AppCompatActivity() {
             return
         }
 
-        val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
+        /*val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
         authService.signUp(getUser()).enqueue(object : retrofit2.Callback<AuthResponse>{
             override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>){
                 Log.d("SIGNUP/SUCCESS", response.toString())
@@ -91,7 +91,21 @@ class SignUpActivity : AppCompatActivity() {
 
         })
         Log.d("SIGNUP", "Hello")
+        */
 
+        val authService = AuthService()
+        authService.setSignUpView(this)
+
+        authService.signUp(getUser())
+
+    }
+
+    override fun onSignUpSuccess() {
+        finish()
+    }
+
+    override fun onSignUpFailure() {
+        TODO("Not yet implemented")
     }
 
 }
