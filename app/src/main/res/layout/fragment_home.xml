@@ -16,12 +16,12 @@
             android:id="@+id/home_pannel_indicator"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            app:ci_drawable_unselected="@drawable/gray_indicator"
-            app:ci_drawable="@drawable/blue_indicator"
             app:ci_animator="@animator/scale_with_alpha"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv"
+            app:ci_drawable="@drawable/blue_indicator"
+            app:ci_drawable_unselected="@drawable/gray_indicator"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/home_pannel_background_iv" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/home_pannel_background_iv"
@@ -31,15 +31,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
             android:id="@+id/home_pannel_today_music_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="오늘 발매 음악"
             android:layout_marginTop="-2dp"
+            android:text="오늘 발매 음악"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -58,9 +58,9 @@
             android:id="@+id/home_pannel_today_music_overall_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="260dp"
             android:text="종합"
             android:textSize="14sp"
-            android:layout_marginStart="260dp"
             app:layout_constraintBottom_toBottomOf="@id/home_pannel_today_music_txt"
             app:layout_constraintStart_toStartOf="@+id/home_pannel_today_music_txt"
             app:layout_constraintTop_toTopOf="@id/home_pannel_today_music_txt" />
@@ -69,9 +69,9 @@
             android:id="@+id/home_pannel_today_music_domestic_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="310dp"
             android:text="국내"
             android:textSize="14sp"
-            android:layout_marginStart="310dp"
             app:layout_constraintBottom_toBottomOf="@id/home_pannel_today_music_txt"
             app:layout_constraintStart_toStartOf="@+id/home_pannel_today_music_txt"
             app:layout_constraintTop_toTopOf="@id/home_pannel_today_music_txt" />
@@ -80,9 +80,9 @@
             android:id="@+id/home_pannel_today_music_overseas_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="270dp"
             android:text="해외"
             android:textSize="14sp"
-            android:layout_marginStart="270dp"
             app:layout_constraintBottom_toBottomOf="@id/home_pannel_today_music_txt"
             app:layout_constraintStart_toEndOf="@+id/home_pannel_today_music_txt"
             app:layout_constraintTop_toTopOf="@id/home_pannel_today_music_txt" />
@@ -90,33 +90,35 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_today_music_album_rv"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="210dp"
-            android:layout_marginTop="10dp"
-            tools:listitem="@layout/item_album"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_today_music_overall_btn" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_pannel_today_music_overall_btn"
+            tools:listitem="@layout/item_album" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/home_pannel_viewpager_img"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginTop="15dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_today_music_album_rv"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_today_music_album_rv" />
 
         <me.relex.circleindicator.CircleIndicator3
             android:id="@+id/home_banner_indicator"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            app:ci_drawable_unselected="@drawable/gray_indicator"
-            app:ci_drawable="@drawable/blue_indicator"
             app:ci_animator="@animator/scale_with_alpha"
-            app:layout_constraintTop_toBottomOf="@id/home_pannel_viewpager_img"
+            app:ci_drawable="@drawable/blue_indicator"
+            app:ci_drawable_unselected="@drawable/gray_indicator"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/home_pannel_viewpager_img" />
 
         <TextView
             android:id="@+id/home_pannel_potcast_txt"

@@ -15,6 +15,7 @@ import com.example.flo_final.BannerVPAdapter
 import com.example.flo_final.HomeVPAdapter
 import com.example.flo_final.MainActivity
 import com.example.flo_final.R
+import com.example.flo_final.SongDatabase
 import com.example.flo_final.databinding.FragmentHomeBinding
 import com.google.gson.Gson
 import me.relex.circleindicator.CircleIndicator3
@@ -24,7 +25,8 @@ class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     lateinit var indicator3: CircleIndicator3
     lateinit var viewPager2: ViewPager2
-    private var albumDates = ArrayList<Album>()
+    private var albumDatas = ArrayList<Album>()
+    private lateinit var songDB : SongDatabase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,17 +53,11 @@ class HomeFragment : Fragment() {
 */
 
         //}
+        songDB = SongDatabase.getInstance(requireContext())!!
+        albumDatas.addAll(songDB.albumDao().getAlbums())
 
-        albumDates.apply {
-            add(Album("Butter", "방탄소년단 (BTS)",R.drawable.img_album_exp))
-            add(Album("Lilac", "아이유(IU)", R.drawable.img_album_exp2))
-            add(Album("Next Level", "에스파(AESPA)", R.drawable.img_album_exp3))
-            add(Album("Boy with Luv", "방탄소년단(BTS)", R.drawable.img_album_exp4))
-            add(Album("BBoom BBoom", "모모랜드(MOMOLAND)", R.drawable.img_album_exp5))
-            add(Album("Weekend", "태연(Tae Yeon)", R.drawable.img_album_exp6))
-        }
 
-        val albumRVAdapter = AlbumRVAdapter(albumDates)
+        val albumRVAdapter = AlbumRVAdapter(albumDatas)
         binding.homeTodayMusicAlbumRv.adapter=albumRVAdapter
         binding.homeTodayMusicAlbumRv.layoutManager=LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
